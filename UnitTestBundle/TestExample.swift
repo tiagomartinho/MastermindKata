@@ -2,67 +2,48 @@ import XCTest
 
 class TestMasterMind: XCTestCase {
 
-    func testWellPlacedColor() {
-        let mastermind = Mastermind(colors: ["blue"])
+    func testCases() {
+        test(message: "WellPlacedColor",
+             colors: ["blue"], guess: ["blue"],
+             expected: [1, 0])
 
-        let result = mastermind.evaluate(guess: ["blue"])
+        test(message: "NotWellPlacedColor",
+             colors: ["blue"], guess: ["red"],
+             expected: [0, 0])
 
-        XCTAssertEqual([1, 0], result)
+        test(message: "WellPlacedColors",
+             colors: ["blue", "red"], guess: ["blue", "red"],
+             expected: [2, 0])
+
+        test(message: "CorrectButNotWellPlacedColors",
+             colors: ["red", "blue"], guess: ["blue", "red"],
+             expected: [0, 2])
+
+        test(message: "OneMisplacedColor",
+             colors: ["blue", "red"], guess: ["red", "yellow"],
+             expected: [0, 1])
+
+        test(message: "OnlyOneCorrectColor",
+             colors: ["blue", "red"], guess: ["yellow", "red"],
+             expected: [1, 0])
+
+        test(message: "OneCorrectColorWithTheRepeatedColor",
+             colors: ["blue", "red"], guess: ["red", "red"],
+             expected: [1, 0])
+
+        test(message: "IncorrectColors",
+             colors: ["blue", "red"], guess: ["yellow", "white"],
+             expected: [0, 0])
     }
 
-    func testNotWellPlacedColor() {
-        let mastermind = Mastermind(colors: ["blue"])
+    private func test(message: String,
+                      colors: [String],
+                      guess: [String],
+                      expected: [Int]) {
+        let mastermind = Mastermind(colors: colors)
 
-        let result = mastermind.evaluate(guess: ["red"])
+        let result = mastermind.evaluate(guess: guess)
 
-        XCTAssertEqual([0, 0], result)
-    }
-
-    func testWellPlacedColors() {
-        let mastermind = Mastermind(colors: ["blue", "red"])
-
-        let result = mastermind.evaluate(guess: ["blue", "red"])
-
-        XCTAssertEqual([2, 0], result)
-    }
-
-    func testCorrectButNotWellPlacedColors() {
-        let mastermind = Mastermind(colors: ["red", "blue"])
-
-        let result = mastermind.evaluate(guess: ["blue", "red"])
-
-        XCTAssertEqual([0, 2], result)
-    }
-
-    func testOneMisplacedColor() {
-        let mastermind = Mastermind(colors: ["blue", "red"])
-
-        let result = mastermind.evaluate(guess: ["red", "yellow"])
-
-        XCTAssertEqual([0, 1], result)
-    }
-
-    func testOnlyOneCorrectColor() {
-        let mastermind = Mastermind(colors: ["blue", "red"])
-
-        let result = mastermind.evaluate(guess: ["yellow", "red"])
-
-        XCTAssertEqual([1, 0], result)
-    }
-
-    func testOneCorrectColorWithTheRepeatedColor() {
-        let mastermind = Mastermind(colors: ["blue", "red"])
-
-        let result = mastermind.evaluate(guess: ["red", "red"])
-
-        XCTAssertEqual([1, 0], result)
-    }
-
-    func testIncorrectColors() {
-        let mastermind = Mastermind(colors: ["blue", "red"])
-
-        let result = mastermind.evaluate(guess: ["yellow", "white"])
-
-        XCTAssertEqual([0, 0], result)
+        XCTAssertEqual(expected, result, message)
     }
 }
