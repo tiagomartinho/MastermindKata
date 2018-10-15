@@ -41,19 +41,28 @@ class TestMasterMind: XCTestCase {
 
         XCTAssertEqual([0, 1], result)
     }
-}
 
-class Mastermind {
+    func testOnlyOneCorrectColor() {
+        let mastermind = Mastermind(colors: ["blue", "red"])
 
-    let colors: [String]
+        let result = mastermind.evaluate(guess: ["yellow", "red"])
 
-    init(colors: [String]) {
-        self.colors = colors
+        XCTAssertEqual([1, 0], result)
     }
 
-    func evaluate(guess: [String]) -> [Int] {
-        let wellPlaced = guess == colors ? guess.count : 0
-        let correctColors = Set(guess).intersection(Set(colors)).count
-        return [wellPlaced, correctColors - wellPlaced]
+    func testOneCorrectColorWithTheRepeatedColor() {
+        let mastermind = Mastermind(colors: ["blue", "red"])
+
+        let result = mastermind.evaluate(guess: ["red", "red"])
+
+        XCTAssertEqual([1, 0], result)
+    }
+
+    func testIncorrectColors() {
+        let mastermind = Mastermind(colors: ["blue", "red"])
+
+        let result = mastermind.evaluate(guess: ["yellow", "white"])
+
+        XCTAssertEqual([0, 0], result)
     }
 }

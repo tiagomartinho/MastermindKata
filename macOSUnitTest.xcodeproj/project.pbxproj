@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24C292DE217508F7009E8EA0 /* Mastermind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C292DD217508F7009E8EA0 /* Mastermind.swift */; };
 		EAE613EB201C91E300D0C613 /* TestExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE613EA201C91E300D0C613 /* TestExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24C292DD217508F7009E8EA0 /* Mastermind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastermind.swift; sourceTree = "<group>"; };
 		EAE613E7201C91E300D0C613 /* UnitTestBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestBundle.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE613EA201C91E300D0C613 /* TestExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExample.swift; sourceTree = "<group>"; };
 		EAE613EC201C91E300D0C613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				EAE613EA201C91E300D0C613 /* TestExample.swift */,
 				EAE613F0201C928C00D0C613 /* Supporting Files */,
+				24C292DD217508F7009E8EA0 /* Mastermind.swift */,
 			);
 			path = UnitTestBundle;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE613EB201C91E300D0C613 /* TestExample.swift in Sources */,
+				24C292DE217508F7009E8EA0 /* Mastermind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
