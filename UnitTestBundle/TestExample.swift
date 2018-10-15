@@ -33,6 +33,14 @@ class TestMasterMind: XCTestCase {
 
         XCTAssertEqual([0, 2], result)
     }
+
+    func testOneMisplacedColor() {
+        let mastermind = Mastermind(colors: ["blue", "red"])
+
+        let result = mastermind.evaluate(guess: ["red", "yellow"])
+
+        XCTAssertEqual([0, 1], result)
+    }
 }
 
 class Mastermind {
@@ -45,7 +53,7 @@ class Mastermind {
 
     func evaluate(guess: [String]) -> [Int] {
         let wellPlaced = guess == colors ? guess.count : 0
-        let correctColors = Set(guess) == Set(colors) ? guess.count : 0
+        let correctColors = Set(guess).intersection(Set(colors)).count
         return [wellPlaced, correctColors - wellPlaced]
     }
 }
