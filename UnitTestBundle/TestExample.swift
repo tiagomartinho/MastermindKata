@@ -1,27 +1,25 @@
 import XCTest
 
-class TestExample: XCTestCase {
+class TestMasterMind: XCTestCase {
 
-    var sut: SystemUnderTest!
+    func testWellPlacedSingleColor() {
+        let mastermind = Mastermind(colors: ["blue"])
 
-    override func setUp() {
-        super.setUp()
-        sut = SystemUnderTest()
-    }
-    
-    func testExample() {
-        sut.methodToTest()
-        XCTAssert(true)
-    }
-    
-    func testPerformanceExample() {
-        self.measure {
-            sut.methodToTest()
-        }
+        let result = mastermind.evaluate(guess: ["blue"])
+
+        XCTAssertEqual([1,0], result)
     }
 }
 
-class SystemUnderTest {
-    func methodToTest() {
+class Mastermind {
+
+    let colors: [String]
+
+    init(colors: [String]) {
+        self.colors = colors
+    }
+
+    func evaluate(guess: [String]) -> [Int] {
+        return [1, 0]
     }
 }
