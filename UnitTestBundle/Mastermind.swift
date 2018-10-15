@@ -13,7 +13,8 @@ class Mastermind {
                 return result + wellPlacedColor
         }
         let misplaced = colors.reduce(0) { result, color -> Int in
-            return result + (Set(guess).contains(color) ? 1 : 0)
+            let guessContainsColor = (Set(guess).contains(color) ? 1 : 0)
+            return result + guessContainsColor
         }
         return Result(wellPlacedColors: wellPlaced,
                       misplacedColors: misplaced - wellPlaced)
