@@ -46,6 +46,10 @@
         test(message: "TwoMisplacedOneCorrect",
              colors: [.blue, .red, .red], guess: [.red, .red, .blue],
              expected: [1, 2])
+
+//        test(message: "TwoMisplacedOneCorrect",
+//             colors: [.blue, .red, .red], guess: [.red, .blue, .yellow],
+//             expected: [0, 2])
     }
 
     private func test(message: String,
