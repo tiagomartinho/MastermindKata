@@ -34,6 +34,14 @@
         test(message: "IncorrectColors",
              colors: [.blue, .red], guess: [.yellow, .white],
              expected: [0, 0])
+
+        test(message: "OneCorrectOneMisplaced",
+             colors: [.blue, .red, .yellow], guess: [.blue, .white, .red],
+             expected: [1, 1])
+
+        test(message: "DifferentSizeGuess",
+             colors: [.blue], guess: [.blue, .white, .red, .red],
+             expected: [1, 0])
     }
 
     private func test(message: String,
