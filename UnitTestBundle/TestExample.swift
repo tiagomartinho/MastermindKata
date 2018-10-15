@@ -17,6 +17,14 @@ class TestMasterMind: XCTestCase {
 
         XCTAssertEqual([0, 0], result)
     }
+
+    func testWellPlacedMultipleColors() {
+        let mastermind = Mastermind(colors: ["blue", "red"])
+
+        let result = mastermind.evaluate(guess: ["blue", "red"])
+
+        XCTAssertEqual([2, 0], result)
+    }
 }
 
 class Mastermind {
@@ -28,7 +36,7 @@ class Mastermind {
     }
 
     func evaluate(guess: [String]) -> [Int] {
-        let wellPlaced = guess == colors ? 1 : 0
+        let wellPlaced = guess == colors ? guess.count : 0
         return [wellPlaced, 0]
     }
 }
