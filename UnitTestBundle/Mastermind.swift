@@ -6,13 +6,14 @@ class Mastermind {
         self.colors = colors
     }
 
-    func evaluate(guess: [Color]) -> [Int] {
+    func evaluate(guess: [Color]) -> Result {
         let wellPlaced = zip(colors, guess)
             .reduce(0) { (result, combined) -> Int in
                 let wellPlacedColor = (combined.0 == combined.1 ? 1 : 0)
                 return result + wellPlacedColor
         }
         let correctColors = Set(guess).intersection(Set(colors)).count
-        return [wellPlaced, correctColors - wellPlaced]
+        let misPlaced = correctColors - wellPlaced
+        return Result(wellPlacedColors: wellPlaced, misplacedColors: misPlaced)
     }
 }

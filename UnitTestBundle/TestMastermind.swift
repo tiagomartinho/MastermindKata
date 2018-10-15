@@ -44,6 +44,7 @@
 
         let result = mastermind.evaluate(guess: guess)
 
+        let expected = Result(wellPlacedColors: expected[0], misplacedColors: expected[1])
         XCTAssertEqual(expected, result, message)
     }
  }
