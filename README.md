@@ -1,15 +1,11 @@
-# macOS Unit Test
+# Mastermind Kata
 
-Template to use as a starting point when learning TDD in Swift.
-
-## Idea
-
-The idea is to have the simplest and fastest setup to learn TDD in Swift. The project only has a unit test bundle and runs on macOS in order to have a faster feedback loop.
+[Mastermind Kata](http://codingdojo.org/kata/Mastermind/)
 
 ## Requirements
 
-* macOS 10.13 or higher
-* Xcode 9.3.1 or higher
+* macOS 10.14 or higher
+* Xcode 10 or higher
 
 ## Run Tests
 
