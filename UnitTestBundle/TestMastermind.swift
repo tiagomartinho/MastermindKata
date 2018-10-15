@@ -42,6 +42,10 @@
         test(message: "DifferentSizeGuess",
              colors: [.blue], guess: [.blue, .white, .red, .red],
              expected: [1, 0])
+
+        test(message: "TwoMisplacedOneCorrect",
+             colors: [.blue, .red, .red], guess: [.red, .red, .blue],
+             expected: [1, 2])
     }
 
     private func test(message: String,

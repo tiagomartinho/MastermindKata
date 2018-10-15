@@ -12,8 +12,10 @@ class Mastermind {
                 let wellPlacedColor = (combined.0 == combined.1 ? 1 : 0)
                 return result + wellPlacedColor
         }
-        let correctColors = Set(guess).intersection(Set(colors)).count
-        let misPlaced = correctColors - wellPlaced
-        return Result(wellPlacedColors: wellPlaced, misplacedColors: misPlaced)
+        let misplaced = colors.reduce(0) { result, color -> Int in
+            return result + (Set(guess).contains(color) ? 1 : 0)
+        }
+        return Result(wellPlacedColors: wellPlaced,
+                      misplacedColors: misplaced - wellPlaced)
     }
 }
