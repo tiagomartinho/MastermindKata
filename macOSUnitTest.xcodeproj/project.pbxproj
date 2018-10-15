@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		24C292DE217508F7009E8EA0 /* Mastermind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C292DD217508F7009E8EA0 /* Mastermind.swift */; };
 		24C292E021751154009E8EA0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C292DF21751154009E8EA0 /* Color.swift */; };
-		EAE613EB201C91E300D0C613 /* TestExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE613EA201C91E300D0C613 /* TestExample.swift */; };
+		EAE613EB201C91E300D0C613 /* TestMastermind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE613EA201C91E300D0C613 /* TestMastermind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24C292DD217508F7009E8EA0 /* Mastermind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastermind.swift; sourceTree = "<group>"; };
 		24C292DF21751154009E8EA0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EAE613E7201C91E300D0C613 /* UnitTestBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestBundle.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAE613EA201C91E300D0C613 /* TestExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExample.swift; sourceTree = "<group>"; };
+		EAE613EA201C91E300D0C613 /* TestMastermind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMastermind.swift; sourceTree = "<group>"; };
 		EAE613EC201C91E300D0C613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +50,7 @@
 		EAE613E9201C91E300D0C613 /* UnitTestBundle */ = {
 			isa = PBXGroup;
 			children = (
-				EAE613EA201C91E300D0C613 /* TestExample.swift */,
+				EAE613EA201C91E300D0C613 /* TestMastermind.swift */,
 				EAE613F0201C928C00D0C613 /* Supporting Files */,
 				24C292DD217508F7009E8EA0 /* Mastermind.swift */,
 				24C292DF21751154009E8EA0 /* Color.swift */,
@@ -134,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE613EB201C91E300D0C613 /* TestExample.swift in Sources */,
+				EAE613EB201C91E300D0C613 /* TestMastermind.swift in Sources */,
 				24C292DE217508F7009E8EA0 /* Mastermind.swift in Sources */,
 				24C292E021751154009E8EA0 /* Color.swift in Sources */,
 			);

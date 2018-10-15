@@ -1,6 +1,6 @@
  import XCTest
 
- class TestMasterMind: XCTestCase {
+ class TestMastermind: XCTestCase {
 
     func testCases() {
         test(message: "WellPlacedColor",
