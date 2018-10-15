@@ -1,12 +1,12 @@
 class Mastermind {
 
-    let colors: [String]
+    let colors: [Color]
 
-    init(colors: [String]) {
+    init(colors: [Color]) {
         self.colors = colors
     }
 
-    func evaluate(guess: [String]) -> [Int] {
+    func evaluate(guess: [Color]) -> [Int] {
         let wellPlaced = zip(colors, guess)
             .reduce(0) { (result, combined) -> Int in
                 let wellPlacedColor = (combined.0 == combined.1 ? 1 : 0)
